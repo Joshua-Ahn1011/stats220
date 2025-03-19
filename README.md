@@ -15,7 +15,7 @@ In order of what I want to learn would be:
 2. How a script can make a website or game
 3. How to automate menial tasks such as excel in a business context
 
-A meme that captures how I currently feel about my university studies is ![image]("media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif")
+A meme that captures how I currently feel about my university studies is ![hippo](https://media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif)
 I am going to kill 
 # I just lost all of my progress
 ## I am going to take it out on this project now
