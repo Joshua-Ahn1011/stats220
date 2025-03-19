@@ -8,6 +8,12 @@ A little about me:
 - I am taking STATS 220 because I am interested in coding and imaginative solutions to AI
   - Also it's my first time coding and I love to learn about it 
 - I am interested in learning about how coding is used in modern society and its basics.
+  - Wanting to perhaps learn the basics of developing simple games
+
+In order of what I want to learn would be:
+1. The underlying basics of R to read a new language
+2. How a script can make a website or game
+3. How to automate menial tasks such as excel in a business context
 
 A meme that captures how I currently feel about my university studies is ![]()
 I am going to kill 
