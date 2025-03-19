@@ -15,7 +15,7 @@ In order of what I want to learn would be:
 2. How a script can make a website or game
 3. How to automate menial tasks such as excel in a business context
 
-A meme that captures how I currently feel about my university studies is ![]()
+A meme that captures how I currently feel about my university studies is ![](media3.giphy.com/media/aUovxH8Vf9qDu/giphy.gif)
 I am going to kill 
 # I just lost all of my progress
 ## I am going to take it out on this project now
@@ -24,3 +24,4 @@ I am going to kill
 _But now it shall be about rage_
 ![](https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTuUsFAgXIm9ZenS2IjPch_p41MFf7L6lODsiwgg-cs5Ifn0PeYJBGhSMTva3L97yWiNsyP3T5ho5-lQFGT9LMTNY7GOBCjtNLNofxR)
 
+https://www.beano.com/random/fun/pokemon-facts Here's some fun facts you can learn about pokemon if you want, grew up with it as a child and love it to this day.
