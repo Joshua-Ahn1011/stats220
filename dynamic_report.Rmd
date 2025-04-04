@@ -1,0 +1,107 @@
+---
+title: My dynamic report
+output: html_fragment
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo=FALSE, message=FALSE, warning=FALSE, error=FALSE)
+
+```
+
+```{css}
+
+```
+
+## Observation of Local cars and their types and colours
+
+
+```{r}
+library(tidyverse)
+
+read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRujWLtqEWiSAHXUFE2tHAGrtY2dMZd8s52el1I9b6GdQ6PtF4erj5Q6fk3khWTiPXeSmLfTHayZfLf/pub?output=csv")
+
+# Step 1: Read CSV data from URL into a data frame called logged_data
+logged_data <- read_csv("https://docs.google.com/spreadsheets/d/e/2PACX-1vRujWLtqEWiSAHXUFE2tHAGrtY2dMZd8s52el1I9b6GdQ6PtF4erj5Q6fk3khWTiPXeSmLfTHayZfLf/pub?output=csv")
+
+# Check structure and column names of data
+glimpse(logged_data)
+
+latest_data <- logged_data %>%
+  rename(
+    Timestamp      = `Timestamp`,
+    ObsTime        = `At what time did you observe the vehicles? (Please enter the time in 24-hour format, e.g., 14:30)`,
+    VehicleType    = `Question: What type of vehicle did you observe?`,
+    VehicleColor   = `What is the primary color of the vehicle?`,
+    Comments       = `Do you have any additional comments or observations about this vehicle or the traffic conditions?`
+  )
+
+glimpse(latest_data)
+
+names(logged_data)
+
+# Step 3: Compute Summary Values
+# Example summary 1: Total number of observations
+total_obs <- nrow(latest_data)
+
+total_obs
+
+# Example summary 2: Frequency count of each vehicle type
+vehicle_type_summary <- latest_data %>%
+  group_by(VehicleType) %>%
+  summarize(Count = n(), .groups = "drop")
+
+vehicle_type_summary
+# This Sums the total different types of vehicles
+
+# Print summary values to the console
+print(paste("Total Observations:", total_obs))
+print(vehicle_type_summary)
+
+# Step 4: Create Bar Charts using ggplot2
+
+# Bar Chart 1: Frequency of Vehicle Types
+plot_vehicle_type <- ggplot(latest_data, aes(x = VehicleType)) +
+  geom_bar(fill = "#6a0dad") +
+  labs(title = "Frequency of Vehicle Types",
+       x = "Vehicle Type",
+       y = "Count") +
+  theme_minimal()
+
+# Display the first bar chart
+print(plot_vehicle_type)
+
+# Bar Chart 2: Frequency of Vehicle Colors
+plot_vehicle_color <- ggplot(latest_data, aes(x = VehicleColor)) +
+  geom_bar(fill = "#B2C248") +
+  labs(title = "Frequency of Vehicle Colors",
+       x = "Vehicle Color",
+       y = "Count") +
+  theme_minimal()
+
+# Display second bar chart
+print(plot_vehicle_color)
+
+```
+
+The total number of vehicle observations is **`r total_obs`**.
+
+# This shows the total amount of vehicles seen
+
+The most frequently observed vehicle type is **`r paste(vehicle_type_summary$VehicleType[which.max(vehicle_type_summary$Count)], "with", max(vehicle_type_summary$Count), "observations")`**.
+
+# This shows the most common vehicle type seen in my local area.
+```{Rspacechunk2}
+
+# ---------------------------------------------------------------------------
+# FINAL CODE FOR REPORT:
+# The code above calculates two summary values:
+#   1. Total number of observations (total_obs)
+#   2. vehicle type count (vehicle_type_summary)
+#
+# It also produces two informative bar charts:
+#   - chart for the frequency of each vehicle type (plot_vehicle_type)
+#   - chart for the frequency of vehicle colors (plot_vehicle_color)
+
+
+```
+
